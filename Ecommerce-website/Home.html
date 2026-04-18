@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAISON PS — Luxury Fashion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══════════════ ANNOUNCEMENT BAR ══════════════ -->
+  <div class="announce-bar">
+    <div class="announce-track">
+      <span>Free worldwide shipping on orders over $150 &nbsp;·&nbsp; 30-day returns &nbsp;·&nbsp; New SS25 Collection Now Live &nbsp;·&nbsp; Free worldwide shipping on orders over $150 &nbsp;·&nbsp; 30-day returns &nbsp;·&nbsp; New SS25 Collection Now Live</span>
+    </div>
+    <div class="announce-right">
+      <a href="#">Sign In</a>
+      <span class="announce-divider">|</span>
+      <a href="#">Register</a>
+    </div>
+  </div>
+
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+
+      <!-- Hamburger -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+      <label for="nav-toggle" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <!-- Logo -->
+      <a href="#home" class="nav-logo">MAISON <em>PS</em></a>
+
+      <!-- Links -->
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li class="has-dropdown">
+          <a href="#collection" class="nav-link">Shop <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+          <div class="mega-menu">
+            <div class="mega-col">
+              <h5>Categories</h5>
+              <a href="#collection">Clothing</a>
+              <a href="#collection">Footwear</a>
+              <a href="#collection">Accessories</a>
+              <a href="#collection">Bags</a>
+            </div>
+            <div class="mega-col">
+              <h5>Collections</h5>
+              <a href="#sellers">Top Sales</a>
+              <a href="#sellers">New Arrivals</a>
+              <a href="#sellers">Hot Sales</a>
+              <a href="#sellers">Exclusive</a>
+            </div>
+            <div class="mega-col mega-img">
+              <img src="https://i.postimg.cc/Xqmwr12c/clothing.webp" alt="Featured">
+              <span>Summer '25</span>
+            </div>
+          </div>
+        </li>
+        <li><a href="#news" class="nav-link">Journal</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="searchToggle" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="nav-icon-btn" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+        <button class="nav-icon-btn cart-btn" id="cartToggle" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar" id="searchBar">
+      <input type="text" placeholder="Search for products, collections..." id="searchInput">
+      <button onclick="document.getElementById('searchBar').classList.remove('open'); document.getElementById('navbar').classList.remove('search-open')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════ CART DRAWER ══════════════ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Bag <span id="cartHeaderCount">(0)</span></h3>
+      <button class="cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <p>Your bag is empty</p>
+        <a href="#sellers" id="startShopping">Start Shopping</a>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <p class="cart-shipping-note">Shipping & taxes calculated at checkout</p>
+      <button class="btn-checkout">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section id="home" class="hero">
+    <div class="hero-media">
+      <img src="https://i.postimg.cc/t403yfn9/home2.jpg" alt="Hero" class="hero-img" id="heroImg">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content" data-reveal>
+      <p class="hero-eyebrow">Spring / Summer 2025</p>
+      <h1 class="hero-title">The Art of<br><em>Effortless</em> Style</h1>
+      <p class="hero-sub">Luxury essentials, ethically crafted with an unwavering commitment to exceptional quality.</p>
+      <div class="hero-ctas">
+        <a href="#sellers" class="btn-primary">Shop Collection</a>
+        <a href="#collection" class="btn-ghost">Explore Lookbook</a>
+      </div>
+    </div>
+    <div class="hero-social">
+      <span>Follow</span>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TRUST BAR ══════════════ -->
+  <div class="trust-bar">
+    <div class="trust-item"><i class="fa-solid fa-truck-fast"></i><span>Free Worldwide Shipping</span></div>
+    <div class="trust-item"><i class="fa-solid fa-rotate-left"></i><span>30-Day Returns</span></div>
+    <div class="trust-item"><i class="fa-solid fa-shield-halved"></i><span>Secure Payments</span></div>
+    <div class="trust-item"><i class="fa-solid fa-leaf"></i><span>Sustainably Sourced</span></div>
+  </div>
+
+  <!-- ══════════════ CATEGORY GRID ══════════════ -->
+  <section id="collection" class="categories-section">
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow">Curated For You</p>
+      <h2 class="section-title">Shop by Category</h2>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card cat-large" data-reveal>
+        <img src="https://i.postimg.cc/Xqmwr12c/clothing.webp" alt="Clothing">
+        <div class="cat-info">
+          <h3>Clothing</h3>
+          <p>128 pieces</p>
+          <a href="#sellers" class="cat-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="cat-card" data-reveal data-delay="100">
+        <img src="https://i.postimg.cc/8CmBZH5N/shoes.webp" alt="Shoes">
+        <div class="cat-info">
+          <h3>Footwear</h3>
+          <p>64 pieces</p>
+          <a href="#sellers" class="cat-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="cat-card" data-reveal data-delay="200">
+        <img src="https://i.postimg.cc/MHv7KJYp/access.webp" alt="Accessories">
+        <div class="cat-info">
+          <h3>Accessories</h3>
+          <p>92 pieces</p>
+          <a href="#sellers" class="cat-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ PRODUCT SECTIONS ══════════════ -->
+  <section id="sellers" class="products-section">
+    <div class="container">
+
+      <!-- Filter Tabs -->
+      <div class="products-header" data-reveal>
+        <h2 class="section-title">Our Products</h2>
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-tab="top-sales">Top Sales</button>
+          <button class="filter-tab" data-tab="new-arrivals">New Arrivals</button>
+          <button class="filter-tab" data-tab="hot-sales">Hot Sales</button>
+        </div>
+      </div>
+
+      <!-- TOP SALES -->
+      <div class="products-grid active" id="tab-top-sales">
+        <div class="product-card" data-reveal>
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/8CmBZH5N/shoes.webp" alt="PS England Shoes">
+            <div class="product-badge">Bestseller</div>
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England Shoes" data-price="37.24" data-img="https://i.postimg.cc/8CmBZH5N/shoes.webp">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#e63946" title="Red"></span>
+              <span class="swatch" style="background:#4a90d9" title="Blue"></span>
+              <span class="swatch" style="background:#f0f0f0;border:1px solid #ccc" title="White"></span>
+            </div>
+            <h4 class="product-name">PS England Shoes</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+              <span>(48)</span>
+            </div>
+            <div class="product-price">$37.24</div>
+          </div>
+        </div>
+
+        <div class="product-card" data-reveal data-delay="100">
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/76X9ZV8m/Screenshot_from_2022-06-03_18-45-12.png" alt="PS England Jacket">
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England Jacket" data-price="17.24" data-img="https://i.postimg.cc/76X9ZV8m/Screenshot_from_2022-06-03_18-45-12.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#2d6a4f" title="Green"></span>
+              <span class="swatch" style="background:#888" title="Grey"></span>
+              <span class="swatch" style="background:#8B4513" title="Brown"></span>
+            </div>
+            <h4 class="product-name">PS England Jacket</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+              <span>(21)</span>
+            </div>
+            <div class="product-price">$17.24</div>
+          </div>
+        </div>
+
+        <div class="product-card" data-reveal data-delay="200">
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/j2FhzSjf/bs2.png" alt="PS England Shirt">
+            <div class="product-badge new">New</div>
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England Shirt" data-price="27.24" data-img="https://i.postimg.cc/j2FhzSjf/bs2.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#8B4513" title="Brown"></span>
+              <span class="swatch" style="background:#2d6a4f" title="Green"></span>
+              <span class="swatch" style="background:#4a90d9" title="Blue"></span>
+            </div>
+            <h4 class="product-name">PS England Shirt</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              <span>(73)</span>
+            </div>
+            <div class="product-price">$27.24</div>
+          </div>
+        </div>
+
+        <div class="product-card" data-reveal data-delay="300">
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/QtjSDzPF/bs3.png" alt="PS England Shoes Premium">
+            <div class="product-badge sale">−15%</div>
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn" title="Quick View"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England Premium Shoes" data-price="43.67" data-img="https://i.postimg.cc/QtjSDzPF/bs3.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#e63946" title="Red"></span>
+              <span class="swatch" style="background:#888" title="Grey"></span>
+              <span class="swatch" style="background:#4a90d9" title="Blue"></span>
+            </div>
+            <h4 class="product-name">PS England Premium Shoes</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span>(112)</span>
+            </div>
+            <div class="product-price"><span class="original-price">$51.40</span> $43.67</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW ARRIVALS -->
+      <div class="products-grid" id="tab-new-arrivals">
+        <div class="product-card" data-reveal>
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/fbnB2yfj/na1.png" alt="PS England T-Shirt">
+            <div class="product-badge new">New</div>
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England T-Shirt" data-price="10.23" data-img="https://i.postimg.cc/fbnB2yfj/na1.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#f5f5f5;border:1px solid #ccc"></span>
+              <span class="swatch" style="background:#4a90d9"></span>
+              <span class="swatch" style="background:#8B4513"></span>
+            </div>
+            <h4 class="product-name">PS England T-Shirt</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span>(89)</span>
+            </div>
+            <div class="product-price">$10.23</div>
+          </div>
+        </div>
+        <div class="product-card" data-reveal data-delay="100">
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/zD02zJq8/na2.png" alt="PS England Bag">
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England Bag" data-price="9.28" data-img="https://i.postimg.cc/zD02zJq8/na2.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#8B4513"></span>
+              <span class="swatch" style="background:#e63946"></span>
+              <span class="swatch" style="background:#2d6a4f"></span>
+            </div>
+            <h4 class="product-name">PS England Bag</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+              <span>(7)</span>
+            </div>
+            <div class="product-price">$9.28</div>
+          </div>
+        </div>
+        <div class="product-card" data-reveal data-delay="200">
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/Dfj5VBcz/sunglasses1.jpg" alt="PS England Sunglass">
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England Sunglasses" data-price="6.24" data-img="https://i.postimg.cc/Dfj5VBcz/sunglasses1.jpg">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#888"></span>
+              <span class="swatch" style="background:#111"></span>
+            </div>
+            <h4 class="product-name">PS England Sunglasses</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span>(54)</span>
+            </div>
+            <div class="product-price">$6.24</div>
+          </div>
+        </div>
+        <div class="product-card" data-reveal data-delay="300">
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/FszW12Kc/na4.png" alt="PS England Shoes">
+            <div class="product-badge new">New</div>
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England Shoes Classic" data-price="43.67" data-img="https://i.postimg.cc/FszW12Kc/na4.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#888"></span>
+              <span class="swatch" style="background:#e63946"></span>
+              <span class="swatch" style="background:#4a90d9"></span>
+            </div>
+            <h4 class="product-name">PS England Shoes Classic</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span>(201)</span>
+            </div>
+            <div class="product-price">$43.67</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOT SALES -->
+      <div class="products-grid" id="tab-hot-sales">
+        <div class="product-card" data-reveal>
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/jS7pSQLf/na4.png" alt="PS England Shoes">
+            <div class="product-badge sale">Hot</div>
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England Shoes Sport" data-price="37.24" data-img="https://i.postimg.cc/jS7pSQLf/na4.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#888"></span>
+              <span class="swatch" style="background:#111"></span>
+              <span class="swatch" style="background:#4a90d9"></span>
+            </div>
+            <h4 class="product-name">PS England Shoes Sport</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span>(156)</span>
+            </div>
+            <div class="product-price">$37.24</div>
+          </div>
+        </div>
+        <div class="product-card" data-reveal data-delay="100">
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/fbnB2yfj/na1.png" alt="T-Shirt">
+            <div class="product-badge sale">Hot</div>
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England T-Shirt Pro" data-price="10.23" data-img="https://i.postimg.cc/fbnB2yfj/na1.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#f5f5f5;border:1px solid #ccc"></span>
+              <span class="swatch" style="background:#e63946"></span>
+              <span class="swatch" style="background:#4a90d9"></span>
+            </div>
+            <h4 class="product-name">PS England T-Shirt Pro</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span>(93)</span>
+            </div>
+            <div class="product-price">$10.23</div>
+          </div>
+        </div>
+        <div class="product-card" data-reveal data-delay="200">
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/RhVP7YQk/hs1.png" alt="T-Shirt">
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England Graphic Tee" data-price="15.24" data-img="https://i.postimg.cc/RhVP7YQk/hs1.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#f5f5f5;border:1px solid #ccc"></span>
+              <span class="swatch" style="background:#e63946"></span>
+              <span class="swatch" style="background:#4a90d9"></span>
+            </div>
+            <h4 class="product-name">PS England Graphic Tee</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span>(67)</span>
+            </div>
+            <div class="product-price">$15.24</div>
+          </div>
+        </div>
+        <div class="product-card" data-reveal data-delay="300">
+          <div class="product-img-wrap">
+            <img src="https://i.postimg.cc/zD02zJq8/na2.png" alt="Bag">
+            <div class="product-actions">
+              <button class="prod-action-btn wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+              <button class="prod-action-btn quick-view-btn"><i class="fa-regular fa-eye"></i></button>
+            </div>
+            <button class="add-to-cart-overlay" data-name="PS England Tote Bag" data-price="9.28" data-img="https://i.postimg.cc/zD02zJq8/na2.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-colors">
+              <span class="swatch" style="background:#f5f5f5;border:1px solid #ccc"></span>
+              <span class="swatch" style="background:#888"></span>
+              <span class="swatch" style="background:#8B4513"></span>
+            </div>
+            <h4 class="product-name">PS England Tote Bag</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+              <span>(12)</span>
+            </div>
+            <div class="product-price">$9.28</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════ EDITORIAL BANNER ══════════════ -->
+  <section class="editorial-banner" data-reveal>
+    <div class="editorial-inner">
+      <p class="section-eyebrow">Curated Selection</p>
+      <h2>Crafted with Purpose,<br><em>Worn with Intention</em></h2>
+      <p>Every piece in our collection is thoughtfully designed to last beyond the season — a wardrobe built to endure.</p>
+      <a href="#sellers" class="btn-primary">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- ══════════════ JOURNAL ══════════════ -->
+  <section id="news" class="journal-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <p class="section-eyebrow">Latest from the Journal</p>
+        <h2 class="section-title">Fashion & Lifestyle</h2>
+      </div>
+      <div class="journal-grid">
+        <article class="journal-card" data-reveal>
+          <div class="journal-img-wrap">
+            <img src="https://i.postimg.cc/2y6wbZCm/news1.jpg" alt="Curling Irons">
+            <span class="journal-tag">Beauty</span>
+          </div>
+          <div class="journal-body">
+            <time>February 12, 2022</time>
+            <h3>What Curling Irons Are The Best Ones</h3>
+            <p>Discover the top-rated tools that professional stylists rely on for flawless results every time.</p>
+            <a href="https://www.vogue.com/article/best-curling-irons" target="_blank" class="journal-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="journal-card" data-reveal data-delay="100">
+          <div class="journal-img-wrap">
+            <img src="https://i.postimg.cc/9MXPK7RT/news2.jpg" alt="Sunglasses">
+            <span class="journal-tag">Wellness</span>
+          </div>
+          <div class="journal-body">
+            <time>February 17, 2022</time>
+            <h3>The Health Benefits of Wearing Sunglasses</h3>
+            <p>Beyond style — how the right pair of shades protects your vision and elevates your everyday look.</p>
+            <a href="https://www.rivieraopticare.com/blog/314864-the-health-benefits-of-wearing-sunglasses_2/" target="_blank" class="journal-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="journal-card" data-reveal data-delay="200">
+          <div class="journal-img-wrap">
+            <img src="https://i.postimg.cc/x1KKdRLM/news3.jpg" alt="Eternity Bands">
+            <span class="journal-tag">Jewelry</span>
+          </div>
+          <div class="journal-body">
+            <time>February 26, 2022</time>
+            <h3>Eternity Bands: Do They Last Forever?</h3>
+            <p>The timeless symbolism behind eternity bands and what to look for when choosing the perfect one.</p>
+            <a href="https://www.briangavindiamonds.com/news/eternity-bands-symbolize-love-that-lasts-forever/" target="_blank" class="journal-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTACT ══════════════ -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info" data-reveal>
+          <p class="section-eyebrow">Get in Touch</p>
+          <h2>Contact Us</h2>
+          <p class="contact-desc">As you might expect of a company that began as a high-end interiors contractor, we pay strict attention to every detail.</p>
+          <div class="contact-locations">
+            <div class="location">
+              <h4><i class="fa-solid fa-location-dot"></i> United States</h4>
+              <p>195 E Parker Square Dr, Parker, CO 80134</p>
+              <p>+43 982-314-0958</p>
+            </div>
+            <div class="location">
+              <h4><i class="fa-solid fa-location-dot"></i> India</h4>
+              <p>HW95+C9C, Pune, Maharashtra</p>
+              <p>411014</p>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/xzbowpjq" method="POST" data-reveal data-delay="150">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Full Name</label>
+              <input type="text" id="fname" name="name" placeholder="Jane Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="femail">Email Address</label>
+              <input type="email" id="femail" name="email" placeholder="jane@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fsubject">Subject</label>
+            <input type="text" id="fsubject" name="subject" placeholder="How can we help you?">
+          </div>
+          <div class="form-group">
+            <label for="fmessage">Message</label>
+            <textarea id="fmessage" name="message" rows="5" placeholder="Tell us about your enquiry..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="map-wrap" data-reveal>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.121169986175!2d73.90618951442687!3d18.568575172551647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c131ed5b54a7%3A0xad718b8b2c93d36d!2sSky%20Vista!5e0!3m2!1sen!2sin!4v1654257749399!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">MAISON <em>PS</em></div>
+          <p>The customer is at the heart of our unique business model — where design meets heritage and quality endures.</p>
+          <div class="payment-icons">
+            <img src="https://i.postimg.cc/Nj9dgJ98/cards.png" alt="Payment methods">
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Shopping</h5>
+          <a href="#sellers">Clothing Store</a>
+          <a href="#sellers">Trending Shoes</a>
+          <a href="#sellers">Accessories</a>
+          <a href="#sellers">Sale</a>
+        </div>
+        <div class="footer-col">
+          <h5>Help</h5>
+          <a href="#contact">Contact Us</a>
+          <a href="https://payment-method-sb.netlify.app/" target="_blank">Payment Methods</a>
+          <a href="https://delivery-status-sb.netlify.app/" target="_blank">Delivery Status</a>
+          <a href="https://codepen.io/sandeshbodake/full/Jexxrv" target="_blank">Returns & Exchange</a>
+        </div>
+        <div class="footer-newsletter">
+          <h5>Stay in the Loop</h5>
+          <p>Be the first to know about new arrivals, lookbooks, and exclusive offers.</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2025 Maison PS. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

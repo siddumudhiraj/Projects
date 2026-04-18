@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <h2>To-Do</h2>
+      <button class="toggle-dark" id="darkMode">🌙</button>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="task" placeholder="Enter task...">
+      <button class="add-btn" id="addBtn">Add</button>
+    </div>
+
+    <input type="text" id="search" placeholder="Search tasks..." class="search">
+
+    <div class="filter-group">
+      <button onclick="filterTasks('all')">All</button>
+      <button onclick="filterTasks('completed')">Completed</button>
+      <button onclick="filterTasks('pending')">Pending</button>
+    </div>
+
+    <ul id="list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
