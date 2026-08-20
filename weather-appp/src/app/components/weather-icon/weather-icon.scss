@@ -1,0 +1,56 @@
+.wicon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.sun-core {
+  fill: var(--color-amber);
+}
+
+.sun-rays line {
+  stroke: var(--color-amber);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.moon {
+  fill: var(--color-slate);
+}
+
+.star {
+  fill: var(--color-mist);
+  opacity: 0.8;
+}
+
+.cloud {
+  fill: var(--color-mist);
+  opacity: 0.85;
+}
+
+.drops line {
+  stroke: var(--color-day);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.flakes circle {
+  fill: var(--color-mist);
+}
+
+.bolt {
+  fill: var(--color-amber);
+}
+
+.fog-line {
+  stroke: var(--color-slate);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  opacity: 0.7;
+}
+
+.wind-line {
+  fill: none;
+  stroke: var(--color-day);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}

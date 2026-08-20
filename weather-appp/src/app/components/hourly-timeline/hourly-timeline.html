@@ -1,0 +1,32 @@
+@if (hours().length) {
+  <section class="timeline-panel">
+    <div class="timeline-header">
+      <h2>48-Hour Outlook</h2>
+      <div class="legend">
+        <span class="legend-item"><i class="chip past"></i>Past 24h</span>
+        <span class="legend-item"><i class="chip future"></i>Next 24h</span>
+      </div>
+    </div>
+
+    <div class="timeline-scroll" #scrollTrack>
+      <div class="rail-track">
+        @for (h of hours(); track h.datetimeEpoch) {
+          <div
+            class="hour-col"
+            [class.is-now]="h.isNow"
+            [class.is-day]="h.isDay"
+            [class.is-past]="h.datetimeEpoch < nowEpoch"
+          >
+            <span class="rail-dot" [class.day]="h.isDay"></span>
+            <span class="time">{{ h.isNow ? 'Now' : h.time }}</span>
+            <div class="icon-wrap" [title]="h.conditions">
+              <app-weather-icon [icon]="h.icon" [size]="24"></app-weather-icon>
+            </div>
+            <span class="temp">{{ h.temp }}°</span>
+            <span class="meta">{{ h.precipprob }}% · {{ h.windspeed }}km/h</span>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}

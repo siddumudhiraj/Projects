@@ -1,0 +1,109 @@
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0 14px;
+  height: 48px;
+  transition: border-color 0.15s ease;
+
+  &:focus-within {
+    border-color: var(--color-amber);
+  }
+
+  .pin {
+    color: var(--color-slate);
+    flex-shrink: 0;
+  }
+
+  input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--color-mist);
+    font-size: 0.95rem;
+
+    &::placeholder {
+      color: var(--color-slate);
+    }
+  }
+}
+
+.icon-btn {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-mist);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.5s ease;
+
+  &:hover:not(:disabled) {
+    background: var(--color-surface-2);
+    color: var(--color-amber);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  &.spinning svg {
+    animation: spin 0.9s linear infinite;
+  }
+}
+
+.go-btn {
+  height: 48px;
+  padding: 0 22px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--color-amber);
+  color: var(--color-night);
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: filter 0.15s ease;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.08);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 560px) {
+  .search-row {
+    flex-wrap: wrap;
+  }
+  .go-btn {
+    order: 1;
+    flex: 1;
+  }
+}

@@ -1,0 +1,37 @@
+<section class="hero">
+  <div class="hero-top">
+    <div class="place">
+      <span class="eyebrow">Observing</span>
+      <h1>{{ resolvedAddress() }}</h1>
+      @if (localTime()) {
+        <span class="local-time">Local time {{ localTime() }}</span>
+      }
+    </div>
+    <app-weather-icon [icon]="current().icon" [size]="72"></app-weather-icon>
+  </div>
+
+  <div class="hero-main">
+    <span class="temp">{{ current().temp }}<span class="deg">°C</span></span>
+    <div class="condition-block">
+      <span class="condition">{{ current().conditions }}</span>
+      <span class="feelslike">Feels like {{ current().feelslike }}°</span>
+    </div>
+  </div>
+
+  <div class="reading-strip">
+    <div class="reading">
+      <span class="label">Wind</span>
+      <span class="value">{{ current().windspeed }}<span class="unit">km/h</span></span>
+    </div>
+    <div class="reading-divider"></div>
+    <div class="reading">
+      <span class="label">Rain chance</span>
+      <span class="value">{{ current().precipprob }}<span class="unit">%</span></span>
+    </div>
+    <div class="reading-divider"></div>
+    <div class="reading">
+      <span class="label">Humidity</span>
+      <span class="value">{{ current().humidity }}<span class="unit">%</span></span>
+    </div>
+  </div>
+</section>

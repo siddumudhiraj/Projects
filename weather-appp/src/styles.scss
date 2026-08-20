@@ -1,0 +1,75 @@
+:root {
+  --color-night: #0f1d33;
+  --color-surface: #182a48;
+  --color-surface-2: #21365a;
+  --color-border: rgba(237, 241, 245, 0.09);
+  --color-mist: #edf1f5;
+  --color-slate: #8393ab;
+  --color-day: #5ba3d9;
+  --color-dawn: #e8836b;
+  --color-amber: #d9a441;
+  --color-danger: #e2685f;
+
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-data: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-panel: 0 20px 60px -20px rgba(0, 0, 0, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(120% 140% at 15% -10%, #1c3357 0%, var(--color-night) 55%);
+  background-attachment: fixed;
+  color: var(--color-mist);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--color-amber);
+  color: var(--color-night);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

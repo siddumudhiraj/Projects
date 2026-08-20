@@ -1,0 +1,50 @@
+<div class="page">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">◐</span>
+      <span class="brand-name">Skyline</span>
+    </div>
+    <app-search-bar
+      [isLoading]="isLoading()"
+      (search)="onSearch($event)"
+      (refresh)="onRefresh()"
+      (useMyLocation)="onUseMyLocation()"
+    ></app-search-bar>
+  </header>
+
+  <main class="content">
+    @if (errorMessage()) {
+      <div class="error-banner" role="alert">
+        {{ errorMessage() }}
+      </div>
+    }
+
+    @if (isLoading() && !snapshot()) {
+      <div class="skeleton">
+        <div class="skeleton-hero">
+          <div class="sweep"></div>
+        </div>
+        <div class="skeleton-strip"></div>
+      </div>
+    }
+
+    @if (snapshot(); as data) {
+      <div animate.enter="fade-slide-in">
+        <app-current-weather
+          [current]="data.current"
+          [resolvedAddress]="data.resolvedAddress"
+          [localTime]="localTime()"
+        ></app-current-weather>
+      </div>
+      <div animate.enter="fade-slide-in">
+        <app-hourly-timeline [hours]="data.hours"></app-hourly-timeline>
+      </div>
+    }
+  </main>
+
+  @if (snapshot(); as data) {
+    <footer class="foot-note">
+      Data via Visual Crossing Weather API · fetched {{ data.fetchedAt | date: 'shortTime' }}
+    </footer>
+  }
+</div>
